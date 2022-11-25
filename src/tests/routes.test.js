@@ -1,4 +1,6 @@
 const axios = require('axios');
+const request = require('supertest');
+const router = require('../routers/navRouter');
 
 test('Basic get request', async () => {
     const expected = {
@@ -6,8 +8,6 @@ test('Basic get request', async () => {
         lastName: "Kim"
     }
 
-    const data = await axios.get('http://172.17.0.1:3000')
-        .then((response) => {
-            expect(response.data).toEqual(expected);
-        })
+    const response = await request(router).get('/');
+    expect(response.body).toEqual(expected);
 })

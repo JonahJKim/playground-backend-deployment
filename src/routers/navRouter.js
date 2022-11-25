@@ -1,9 +1,8 @@
 const express = require('express');
 
-const router = express.Router();
-router.use(express.json());
+const app = express();
 
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
     const result = {
         firstName: "Jonah",
         lastName: "Kim"
@@ -11,4 +10,4 @@ router.get('/', (req, res) => {
     res.status(200).send(result);
 })
 
-module.exports = router
+module.exports = app
