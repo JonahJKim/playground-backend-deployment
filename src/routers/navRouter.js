@@ -5,7 +5,7 @@ const app = express();
 app.get('/', (req, res) => {
     const result = {
         firstName: "Jonah",
-        lastName: "Kimm"
+        lastName: "Kim"
     };
     res.status(200).send(result);
 })
