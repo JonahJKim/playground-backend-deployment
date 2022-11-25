@@ -5,7 +5,7 @@ const router = require('../routers/navRouter');
 test('Basic get request', async () => {
     const expected = {
         firstName: "Jonah",
-        lastName: "Jung"
+        lastName: "Junggg"
     }
 
     const response = await request(router).get('/');
