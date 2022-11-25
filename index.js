@@ -1,19 +1,12 @@
 const express = require('express');
+const router = require('./src/routers/navRouter');
+
+// constants
+const PORT = process.env.PORT || 3000;
 
 // app set
 const app = express();
-const PORT = process.env.PORT || 3000;
-app.use(express.json());
-
-// app routes
-
-app.get('/', (req, res) => {
-    const result = {
-        firstName: "Jonah",
-        lastName: "Kim"
-    };
-    res.status(200).send(result);
-})
+app.use(router);
 
 
 // app listener
