@@ -1,7 +1,7 @@
 name: Routes Test
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
   pull_request:
     branches: [main]
 
@@ -13,6 +13,5 @@ jobs:
       - name: Default '/' route test
         run: |
           npm ci
-          node index.js &
-          sleep 5
-          curl http://localhost:3000
+          node index.js
+      - run: curl http://localhost:3000
