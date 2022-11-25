@@ -1,0 +1,14 @@
+name: Routes Test
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  CRUD-tests:
+    runs-on: ubuntu-linux
+    steps:
+      - name: Default / route test
+        run: |
+          curl http://localhost:3000
