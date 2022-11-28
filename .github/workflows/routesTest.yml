@@ -25,6 +25,4 @@ jobs:
       - name: Dockerize and test dockerized
         run: |
           docker login 
-          jonahjkim
-          08!$JxtmCPro12
           docker build . -t backend-deployment-practice
