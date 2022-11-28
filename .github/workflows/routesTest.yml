@@ -41,6 +41,5 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: "{{defaultContext}}:mysubdir"
           push: true
           tags: jonahjkim/backend-deployment-practice:latest
