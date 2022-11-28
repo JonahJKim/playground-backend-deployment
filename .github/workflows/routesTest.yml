@@ -24,7 +24,8 @@ jobs:
 
   Dockerize:
     runs-on: ubuntu-latest
-
+    if: github.event_type == 'push'
+    
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
