@@ -3,7 +3,7 @@ const router = require('../routers/navRouter');
 
 test('Basic get request', async () => {
     const expected = {
-        firstName: "Jonah",
+        firstName: "Jonahhhhh",
         lastName: "Kim"
     }
 
