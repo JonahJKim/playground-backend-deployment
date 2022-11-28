@@ -1,4 +1,3 @@
-const axios = require('axios');
 const request = require('supertest');
 const router = require('../routers/navRouter');
 
