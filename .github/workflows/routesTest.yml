@@ -24,7 +24,7 @@ jobs:
 
   Dockerize:
     runs-on: ubuntu-latest
-    if: github.event_type == 'push'
+    if: github.event_name == 'push'
     
     steps:
       - name: Set up QEMU
@@ -48,14 +48,14 @@ jobs:
   UpdateAWS:
     needs: Dockerize
     runs-on: ubuntu-latest
-    if: github.event_type == 'push'
+    if: github.event_name == 'push'
 
     steps:
       - name: Download AWS CLI
         uses: unfor19/install-aws-cli-action@master
         with: 
           version: "2"
-          
+
       - name: Configure credentials
         run: |
           echo -e "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}"
