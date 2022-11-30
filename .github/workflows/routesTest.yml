@@ -58,5 +58,5 @@ jobs:
 
       - name: Configure credentials
         run: |
-          echo -e "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          echo -e "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }} >> ~/.aws/credentials"
           aws ecs update-service --cluster "backend-deployment-practice" --service "backend-deployment-serviceeee" --force-new-deployment --region "us-west-2"
