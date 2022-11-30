@@ -44,3 +44,19 @@ jobs:
         with:
           push: true
           tags: jonahjkim/backend-deployment-practice:latest
+
+  UpdateAWS:
+    needs: Dockerize
+    runs-on: ubuntu-latest
+    if: github.event_type == 'push'
+
+    steps:
+      - name: Download AWS CLI
+        uses: unfor19/install-aws-cli-action@master
+        with: 
+          version: "2"
+          
+      - name: Configure credentials
+        run: |
+          echo -e "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          aws ecs update-service --cluster "backend-deployment-practice" --service "backend-deployment-serviceeee" --force-new-deployment --region "us-west-2"
